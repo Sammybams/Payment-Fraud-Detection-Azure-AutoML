@@ -1,6 +1,9 @@
 import streamlit as st
 st.set_page_config(page_title="Online Payment Fraud Detection App", page_icon="💳")
 
+
+from PIL import Image
+
 st.title('Online Payment Fraud Detection')
 
 fraud_case = {0:" No Fraud Detected",
@@ -30,3 +33,17 @@ amount = st.number_input('Enter the amount of the transaction', min_value=0, max
 #     percentOut = 0
 # else:
 #     percentOut = amount / oldbalanceOrg
+
+if st.button("Run"):
+    st.header("Prediction")
+    prediction = 1
+
+    if prediction:
+        image = Image.open('Fraud-Alert.jpeg')
+    else:
+        image = Image.open('Pass.png')
+
+    
+    st.image(image, caption='Sunrise by the mountains')
+
+    st.markdown("<br>", unsafe_allow_html=True)
