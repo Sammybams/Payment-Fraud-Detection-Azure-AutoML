@@ -115,6 +115,7 @@ if st.button("Run"):
         image = Image.open('images/Fraud-Alert.jpeg')
     else:
         image = Image.open('images/Pass.png')
+        
 
     output = fraud_case[prediction]
     st.markdown(f'#### *{output}*')
