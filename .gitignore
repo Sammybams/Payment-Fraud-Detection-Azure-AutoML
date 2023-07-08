@@ -4,3 +4,4 @@ variable.env
 /lib/
 pyvenv.cfg
 /share/
+/etc/
