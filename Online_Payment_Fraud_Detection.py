@@ -29,8 +29,8 @@ amount = st.number_input('Enter the amount of the transaction', min_value=0.01, 
 # newbalanceOrig = oldbalanceOrg - amount
 # newbalanceDest = oldbalanceDest + amount
 
-# if (amount==0) and (oldbalanceOrg==0):
-#     percentOut = 0
+# if (oldbalanceOrg==0):
+#     percentOut = float('inf')
 # else:
 #     percentOut = amount / oldbalanceOrg
 
