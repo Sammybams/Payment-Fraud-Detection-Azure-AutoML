@@ -3,3 +3,4 @@ variable.env
 /include/
 /lib/
 pyvenv.cfg
+/share/
