@@ -10,7 +10,7 @@ import ssl
 
 st.title('Online Payment Fraud Detection')
 
-fraud_case = {0:" No Fraud Detected",
+fraud_case = {0:"No Fraud Detected",
               1:"Fraud Detected"}
 
 type_map = {"PAYMENT":"PAYMENT",
@@ -116,7 +116,7 @@ if st.button("Run"):
     else:
         image = Image.open('images/Pass.png')
 
-    st.text(fraud_case[prediction])
+    output = fraud_case[prediction]
+    st.markdown(f'#### *{output}*')
     st.image(image)
 
-    st.markdown("<br>", unsafe_allow_html=True)
