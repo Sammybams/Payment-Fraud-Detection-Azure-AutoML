@@ -36,14 +36,14 @@ amount = st.number_input('Enter the amount of the transaction', min_value=0.0, m
 
 if st.button("Run"):
     st.header("Prediction")
-    prediction = 1
+    prediction = 0
 
     if prediction:
-        image = Image.open('Fraud-Alert.jpeg')
+        image = Image.open('images/Fraud-Alert.jpeg')
     else:
-        image = Image.open('Pass.png')
+        image = Image.open('images/Pass.png')
 
     
-    st.image(image, caption='Sunrise by the mountains')
+    st.image(image)
 
     st.markdown("<br>", unsafe_allow_html=True)
