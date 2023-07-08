@@ -23,3 +23,6 @@ oldbalanceDest = st.number_input('Enter the balance of recipient before the tran
 amount = st.number_input('Enter the amount of the transaction', min_value=0, max_value=oldbalanceOrg)
 
 
+# newbalanceOrig = oldbalanceOrg - amount
+# newbalanceDest = oldbalanceDest + amount
+
