@@ -3,6 +3,10 @@ st.set_page_config(page_title="Online Payment Fraud Detection App", page_icon="ð
 
 
 from PIL import Image
+import urllib.request
+import json
+import os
+import ssl
 
 st.title('Online Payment Fraud Detection')
 
@@ -26,13 +30,52 @@ oldbalanceDest = st.number_input('Enter the balance of recipient before the tran
 amount = st.number_input('Enter the amount of the transaction', min_value=0.01, max_value=oldbalanceOrg)
 
 
-# newbalanceOrig = oldbalanceOrg - amount
-# newbalanceDest = oldbalanceDest + amount
+newbalanceOrig = oldbalanceOrg - amount
+newbalanceDest = oldbalanceDest + amount
 
-# if (oldbalanceOrg==0):
-#     percentOut = 0
-# else:
-#     percentOut = amount / oldbalanceOrg
+if (oldbalanceOrg==0):
+    percentOut = 0
+else:
+    percentOut = amount / oldbalanceOrg
+
+
+from dotenv import load_dotenv
+load_dotenv('variable.env')
+
+
+def allowSelfSignedHttps(allowed):
+    # bypass the server certificate verification on client side
+    if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
+        ssl._create_default_https_context = ssl._create_unverified_context
+
+allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
+
+# Request data goes here
+# The example below assumes JSON formatting which may be updated
+# depending on the format your endpoint expects.
+# More information can be found here:
+# https://docs.microsoft.com/azure/machine-learning/how-to-deploy-advanced-entry-script
+data =  {
+  "Inputs": {
+    "data": [
+      {
+        "step": 0,
+        "type": "example_value",
+        "amount": 0.0,
+        "oldbalanceOrg": 0.0,
+        "newbalanceOrig": 0.0,
+        "oldbalanceDest": 0.0,
+        "newbalanceDest": 0.0,
+        "percentOut": 0.0
+      }
+    ]
+  },
+  "GlobalParameters": {
+    "method": "predict"
+  }
+}
+
+body = str.encode(json.dumps(data))
 
 if st.button("Run"):
     st.header("Prediction")
