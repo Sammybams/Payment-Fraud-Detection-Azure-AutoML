@@ -59,14 +59,14 @@ data =  {
   "Inputs": {
     "data": [
       {
-        "step": 0,
-        "type": "example_value",
-        "amount": 0.0,
-        "oldbalanceOrg": 0.0,
-        "newbalanceOrig": 0.0,
-        "oldbalanceDest": 0.0,
-        "newbalanceDest": 0.0,
-        "percentOut": 0.0
+        "step": step,
+        "type": type_map[type],
+        "amount": amount,
+        "oldbalanceOrg": oldbalanceOrg,
+        "newbalanceOrig": newbalanceOrig,
+        "oldbalanceDest": oldbalanceDest,
+        "newbalanceDest": newbalanceDest,
+        "percentOut": percentOut
       }
     ]
   },
@@ -79,14 +79,44 @@ body = str.encode(json.dumps(data))
 
 if st.button("Run"):
     st.header("Prediction")
-    prediction = 0
+
+    body = str.encode(json.dumps(data))
+
+    url = os.environ.get('ENDPOINT')
+    # Replace this with the primary/secondary key or AMLToken for the endpoint
+    api_key = os.environ.get('KEY')
+    if not api_key:
+        raise Exception("A key should be provided to invoke the endpoint")
+
+
+    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+
+    req = urllib.request.Request(url, body, headers)
+
+    try:
+        response = urllib.request.urlopen(req)
+
+        result = response.read()
+        #print(result)
+
+        #print(int("".join(result.decode().split()[1])[1]))
+        prediction = int("".join(result.decode().split()[1])[1])
+
+    except urllib.error.HTTPError as error:
+        print("The request failed with status code: " + str(error.code))
+
+        # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
+        #print(error.info())
+        #print(error.read().decode("utf8", 'ignore'))
+        prediction = error.read().decode("utf8", 'ignore')
+
 
     if prediction:
         image = Image.open('images/Fraud-Alert.jpeg')
     else:
         image = Image.open('images/Pass.png')
 
-    
+    st.text(fraud_case[prediction])
     st.image(image)
 
     st.markdown("<br>", unsafe_allow_html=True)
