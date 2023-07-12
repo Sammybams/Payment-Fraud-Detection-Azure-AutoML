@@ -25,13 +25,15 @@ type = st.selectbox(
     'Select Transaction Type',
     (type_map.keys()))
 
+amount = st.number_input('Enter the amount of the transaction', min_value=0.01)
 oldbalanceOrg = st.number_input('Enter the balance of originator before the transaction', min_value=0.0)
 oldbalanceDest = st.number_input('Enter the balance of recipient before the transaction', min_value=0.0)
-amount = st.number_input('Enter the amount of the transaction', min_value=0.01, max_value=oldbalanceOrg)
+newbalanceOrig = st.number_input('Enter the balance of originator after the transaction', min_value=0.0)
+newbalanceOrig = st.number_input('Enter the balance of recipient after the transaction', min_value=0.0)
 
 
-newbalanceOrig = oldbalanceOrg - amount
-newbalanceDest = oldbalanceDest + amount
+# newbalanceOrig = oldbalanceOrg - amount
+# newbalanceDest = oldbalanceDest + amount
 
 if (oldbalanceOrg==0):
     percentOut = 0
