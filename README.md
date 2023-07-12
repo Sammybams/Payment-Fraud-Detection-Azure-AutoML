@@ -40,8 +40,7 @@ Then install the necessary dependencies needed.
 pip install -r requirements.txt
 ```
 
-Train and Deploy your model using Azure AutoML
-
+Train and Deploy your model using Azure AutoML<br>
 (Get the URL and Key to your endpoint)
 ```
 coming soon.....
