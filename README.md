@@ -43,5 +43,5 @@ pip install -r requirements.txt
 Run the Streamlit app locally
 
 ```
-flask run
+streamlit run Online_Payment_Fraud_Detection.py
 ```
