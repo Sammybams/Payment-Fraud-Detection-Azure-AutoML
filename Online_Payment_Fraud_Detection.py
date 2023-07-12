@@ -68,7 +68,7 @@ data =  {
         "newbalanceOrig": newbalanceOrig,
         "oldbalanceDest": oldbalanceDest,
         "newbalanceDest": newbalanceDest,
-        "percentOut": percentInOut
+        "percentInOut": percentInOut
       }
     ]
   },
