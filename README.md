@@ -41,6 +41,7 @@ pip install -r requirements.txt
 ```
 
 Train and Deploy your model using Azure AutoML
+
 (Get the URL and Key to your endpoint)
 ```
 coming soon.....
