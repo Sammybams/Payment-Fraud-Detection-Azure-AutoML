@@ -1,4 +1,4 @@
-# PAYMENT-FRAUD-DETECTION-WITH-AZURE-AUTOML
+# Payment-Fraud-Detection-With-Azure-AutoML
 
 ## Description
 
