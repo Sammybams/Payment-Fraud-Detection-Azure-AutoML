@@ -29,7 +29,7 @@ amount = st.number_input('Enter the amount of the transaction', min_value=0.01)
 oldbalanceOrg = st.number_input('Enter the balance of originator before the transaction', min_value=0.0)
 oldbalanceDest = st.number_input('Enter the balance of recipient before the transaction', min_value=0.0)
 newbalanceOrig = st.number_input('Enter the balance of originator after the transaction', min_value=0.0)
-newbalanceOrig = st.number_input('Enter the balance of recipient after the transaction', min_value=0.0)
+newbalanceDest = st.number_input('Enter the balance of recipient after the transaction', min_value=0.0)
 
 
 # newbalanceOrig = oldbalanceOrg - amount
