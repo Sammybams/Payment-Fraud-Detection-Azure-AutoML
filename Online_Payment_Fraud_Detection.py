@@ -36,9 +36,9 @@ newbalanceDest = st.number_input('Enter the new balance of recipient after the t
 # newbalanceDest = oldbalanceDest + amount
 
 if (oldbalanceOrg==0):
-    percentOut = 0
+    percentInOut = 0
 else:
-    percentOut = amount / oldbalanceOrg
+    percentInOut = amount / oldbalanceOrg
 
 
 from dotenv import load_dotenv
@@ -68,7 +68,7 @@ data =  {
         "newbalanceOrig": newbalanceOrig,
         "oldbalanceDest": oldbalanceDest,
         "newbalanceDest": newbalanceDest,
-        "percentOut": percentOut
+        "percentOut": percentInOut
       }
     ]
   },
