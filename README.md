@@ -31,7 +31,7 @@ Clone the repository
 
 ```
 cd paymentFraudDetection
-git clone https://github.com/Sammybams/Payment-Fraud-Detection-Azure-AutoML
+git clone https://github.com/Sammybams/Payment-Fraud-Detection-Azure-AutoML.git
 ```
 
 Then install the necessary dependencies needed.
