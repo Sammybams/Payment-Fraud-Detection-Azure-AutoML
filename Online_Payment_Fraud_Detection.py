@@ -57,6 +57,7 @@ allowSelfSignedHttps(True) # this line is needed if you use self-signed certific
 # depending on the format your endpoint expects.
 # More information can be found here:
 # https://docs.microsoft.com/azure/machine-learning/how-to-deploy-advanced-entry-script
+
 data =  {
   "Inputs": {
     "data": [
@@ -77,10 +78,8 @@ data =  {
   }
 }
 
-body = str.encode(json.dumps(data))
-
-if st.button("Run"):
-    st.header("Prediction")
+def predict(data):
+    body = str.encode(json.dumps(data))
 
     body = str.encode(json.dumps(data))
 
@@ -111,6 +110,13 @@ if st.button("Run"):
         # print(error.info())
         # print(error.read().decode("utf8", 'ignore'))
         prediction = error.read().decode("utf8", 'ignore')
+    
+    return prediction
+
+if st.button("Run"):
+    st.header("Prediction")
+
+    prediction = predict(data)
     
     try:
 
