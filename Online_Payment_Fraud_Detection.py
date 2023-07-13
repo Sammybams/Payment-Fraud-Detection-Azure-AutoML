@@ -111,7 +111,6 @@ def predict(data):
     
     return prediction
 
-@st.cache
 def batch_predict(file):
     
     features = ["step", "type", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
