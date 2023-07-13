@@ -150,13 +150,15 @@ def batch_predict(file):
 if st.button("Run"):
     st.header("Prediction")
 
+    # Calls prediction function on data
     prediction = predict(data)
     
+    # Catches if output was an HTTPError
     try:
 
       output = fraud_case[prediction]
       if prediction:
-          st.warning(f'{output}', icon="⚠️")
+          st.warning(f'{output}', icon="")
           image = Image.open('images/Fraud-Alert.jpeg')
       else:
           st.success(f'{output}', icon="✅")
@@ -166,5 +168,5 @@ if st.button("Run"):
       st.image(image)
 
     except:
-        st.warning('Error in Input.', icon="✅")
+        st.warning(f'{prediction}', icon="⚠️")
         
