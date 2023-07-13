@@ -111,6 +111,7 @@ def predict(data):
     
     return prediction
 
+@st.cache
 def batch_predict(file):
     
     features = ["step", "type", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
@@ -145,7 +146,7 @@ def batch_predict(file):
       predictions.append(predict(data))
     
     file["isFlaggedFraud"] = predictions
-    return file
+    return file.to_csv(index=False)
   
 if st.button("Run"):
     st.header("Prediction")
@@ -179,4 +180,5 @@ if uploaded_file is not None:
         st.warning(f'Not a CSV file', icon="⚠️")
         
     else:
-        pass
+        if st.button("Run"):
+            
