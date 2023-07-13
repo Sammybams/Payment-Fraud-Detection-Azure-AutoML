@@ -113,6 +113,11 @@ def predict(data):
     
     return prediction
 
+def batch_predict(file):
+    predictions = []
+    # for 
+    return
+
 if st.button("Run"):
     st.header("Prediction")
 
