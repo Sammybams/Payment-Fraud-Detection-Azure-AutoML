@@ -114,10 +114,38 @@ def predict(data):
     return prediction
 
 def batch_predict(file):
+    features = ["step", "type", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
     predictions = []
-    # for 
-    return
+    for i in range(file[features].shape[0]):
+      features
+      features = ["step", "type", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
+      file['percentInOut'] = file['amount']/file['oldbalanceOrg']
+      file.loc[file['percentInOut']==float('inf'), 'percentInOut'] = float(0)
 
+      step, type, amount, oldbalanceOrg, newbalanceOrig, oldbalanceDest, newbalanceDest, percentInOut = file[features].iloc[i].to_list()
+      data =  {
+        "Inputs": {
+          "data": [
+            {
+              "step": step,
+              "type": type_map[type],
+              "amount": amount,
+              "oldbalanceOrg": oldbalanceOrg,
+              "newbalanceOrig": newbalanceOrig,
+              "oldbalanceDest": oldbalanceDest,
+              "newbalanceDest": newbalanceDest,
+              "percentInOut": percentInOut
+            }
+          ]
+        },
+        "GlobalParameters": {
+          "method": "predict"
+        }
+      }
+
+    
+    return
+  
 if st.button("Run"):
     st.header("Prediction")
 
