@@ -112,14 +112,15 @@ if st.button("Run"):
         #print(error.read().decode("utf8", 'ignore'))
         prediction = error.read().decode("utf8", 'ignore')
 
-
+    output = fraud_case[prediction]
     if prediction:
+        st.success(f'{output}', icon="✅")
         image = Image.open('images/Fraud-Alert.jpeg')
     else:
         image = Image.open('images/Pass.png')
+        st.warning('This is a warning', icon="⚠️")
         
 
-    output = fraud_case[prediction]
-    st.markdown(f'#### *{output}*')
+    # st.markdown(f'#### *{output}*')
     st.image(image)
 
