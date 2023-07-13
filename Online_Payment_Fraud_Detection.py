@@ -169,7 +169,8 @@ if st.button("Run"):
 
     except:
         st.warning(f'{prediction}', icon="⚠️")
-        
+      
+st.divider()
 
 st.subheader("Batch Prediction")
 uploaded_file = st.file_uploader("Choose a CSV file")
