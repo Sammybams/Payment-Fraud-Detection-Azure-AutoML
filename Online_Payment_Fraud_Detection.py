@@ -170,3 +170,12 @@ if st.button("Run"):
     except:
         st.warning(f'{prediction}', icon="⚠️")
         
+
+st.subheader("Batch Prediction")
+uploaded_file = st.file_uploader("Choose a CSV file")
+if uploaded_file is not None:
+    if uploaded_file.name[-4:]!=',csv':
+        st.warning(f'Not a CSV file', icon="⚠️")
+        
+    else:
+        pass
