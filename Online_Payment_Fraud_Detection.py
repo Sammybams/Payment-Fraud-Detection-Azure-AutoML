@@ -27,8 +27,8 @@ type = st.selectbox(
 
 amount = st.number_input('Enter the amount of the transaction', min_value=0.01)
 oldbalanceOrg = st.number_input('Enter the initial balance of originator before the transaction', min_value=0.0)
-oldbalanceDest = st.number_input('Enter the initial balance of recipient before the transaction', min_value=0.0)
 newbalanceOrig = st.number_input('Enter the new balance of originator after the transaction', min_value=0.0)
+oldbalanceDest = st.number_input('Enter the initial balance of recipient before the transaction', min_value=0.0)
 newbalanceDest = st.number_input('Enter the new balance of recipient after the transaction', min_value=0.0)
 
 
@@ -114,6 +114,7 @@ def predict(data):
     return prediction
 
 def batch_predict(file):
+    
     features = ["step", "type", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
     predictions = []
     for i in range(file[features].shape[0]):
