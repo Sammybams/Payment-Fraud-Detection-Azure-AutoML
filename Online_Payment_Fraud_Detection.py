@@ -19,8 +19,8 @@ type_map = {"PAYMENT":"PAYMENT",
             "DEBIT":"DEBIT",
             "CASH IN":"CASH OUT"}
 
+# Collect data inputs
 step = st.number_input('Enter window of transaction (in hours)', min_value=1, max_value=10)
-
 type = st.selectbox(
     'Select Transaction Type',
     (type_map.keys()))
@@ -41,7 +41,6 @@ else:
 
 from dotenv import load_dotenv
 load_dotenv('variable.env')
-
 
 def allowSelfSignedHttps(allowed):
     # bypass the server certificate verification on client side
