@@ -115,7 +115,7 @@ if st.button("Run"):
     prediction = 1
     output = fraud_case[prediction]
     if prediction:
-        st.warning('This is a warning', icon="⚠️")
+        st.warning(f'{output}', icon="⚠️")
         image = Image.open('images/Fraud-Alert.jpeg')
     else:
         st.success(f'{output}', icon="✅")
