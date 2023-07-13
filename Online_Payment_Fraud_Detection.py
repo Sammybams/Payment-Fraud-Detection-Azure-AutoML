@@ -121,10 +121,13 @@ if st.button("Run"):
       else:
           st.success(f'{output}', icon="✅")
           image = Image.open('images/Pass.png')
+          
+      # st.markdown(f'#### *{output}*')
+      st.image(image)
+
     except:
         st.warning('Error in Input.', icon="✅")
         
 
-    # st.markdown(f'#### *{output}*')
-    st.image(image)
+    
 
