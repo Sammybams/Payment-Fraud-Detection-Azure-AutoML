@@ -8,7 +8,7 @@ import json
 import os
 import ssl
 
-st.title('Online Payment Fraud Detection')
+st.title('Online Payment Fraud Detection 💳')
 
 fraud_case = {0:"No Fraud Detected",
               1:"Fraud Detected"}
@@ -179,5 +179,14 @@ if uploaded_file is not None:
         st.warning(f'Not a CSV file', icon="⚠️")
         
     else:
-        if st.button("Run"):
-            
+        if st.button("Run Batch"):
+          try:
+            output = batch_predict(uploaded_file)
+            st.download_button(
+                label="Download predictions data as CSV",
+                data=output,
+                file_name='fraud_predictions.csv',
+                mime='text/csv',
+            )   
+          except:
+            st.warning('CSV file contains wrong data', icon="⚠️")         
