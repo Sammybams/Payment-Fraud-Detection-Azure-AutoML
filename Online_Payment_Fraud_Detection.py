@@ -31,7 +31,6 @@ newbalanceOrig = st.number_input('Enter the new balance of originator after the 
 oldbalanceDest = st.number_input('Enter the initial balance of recipient before the transaction', min_value=0.0)
 newbalanceDest = st.number_input('Enter the new balance of recipient after the transaction', min_value=0.0)
 
-
 # newbalanceOrig = oldbalanceOrg - amount
 # newbalanceDest = oldbalanceDest + amount
 
@@ -39,7 +38,6 @@ if (oldbalanceOrg==0):
     percentInOut = 0
 else:
     percentInOut = amount / oldbalanceOrg
-
 
 from dotenv import load_dotenv
 load_dotenv('variable.env')
@@ -145,7 +143,6 @@ def batch_predict(file):
       }
 
       predictions.append(predict(data))
-    
     
     file["isFlaggedFraud"] = predictions
     return file
