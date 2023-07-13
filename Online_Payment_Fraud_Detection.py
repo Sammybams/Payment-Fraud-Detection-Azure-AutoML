@@ -143,8 +143,11 @@ def batch_predict(file):
         }
       }
 
+      predictions.append(predict(data))
     
-    return
+    
+    file["isFlaggedFraud"] = predictions
+    return file
   
 if st.button("Run"):
     st.header("Prediction")
