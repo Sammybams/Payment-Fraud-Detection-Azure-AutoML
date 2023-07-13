@@ -8,7 +8,7 @@ Welcome to my project! This machine learning app leverages Azure Automated Machi
 
 From your terminal:
 
-Create a virtual enviroment named `paymentFraudDetection`
+Create a virtual environment named `paymentFraudDetection`
 
 ```
 # Windows
