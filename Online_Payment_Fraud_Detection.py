@@ -82,43 +82,44 @@ body = str.encode(json.dumps(data))
 if st.button("Run"):
     st.header("Prediction")
 
-    body = str.encode(json.dumps(data))
+    # body = str.encode(json.dumps(data))
 
-    url = os.environ.get('ENDPOINT')
-    # Replace this with the primary/secondary key or AMLToken for the endpoint
-    api_key = os.environ.get('KEY')
-    if not api_key:
-        raise Exception("A key should be provided to invoke the endpoint")
+    # url = os.environ.get('ENDPOINT')
+    # # Replace this with the primary/secondary key or AMLToken for the endpoint
+    # api_key = os.environ.get('KEY')
+    # if not api_key:
+    #     raise Exception("A key should be provided to invoke the endpoint")
 
 
-    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+    # headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
-    req = urllib.request.Request(url, body, headers)
+    # req = urllib.request.Request(url, body, headers)
 
-    try:
-        response = urllib.request.urlopen(req)
+    # try:
+    #     response = urllib.request.urlopen(req)
 
-        result = response.read()
-        #print(result)
+    #     result = response.read()
+    #     #print(result)
 
-        #print(int("".join(result.decode().split()[1])[1]))
-        prediction = int("".join(result.decode().split()[1])[1])
+    #     #print(int("".join(result.decode().split()[1])[1]))
+    #     prediction = int("".join(result.decode().split()[1])[1])
 
-    except urllib.error.HTTPError as error:
-        print("The request failed with status code: " + str(error.code))
+    # except urllib.error.HTTPError as error:
+    #     print("The request failed with status code: " + str(error.code))
 
-        # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
-        #print(error.info())
-        #print(error.read().decode("utf8", 'ignore'))
-        prediction = error.read().decode("utf8", 'ignore')
+    #     # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
+    #     #print(error.info())
+    #     #print(error.read().decode("utf8", 'ignore'))
+    #     prediction = error.read().decode("utf8", 'ignore')
 
+    prediction = 1
     output = fraud_case[prediction]
     if prediction:
-        st.success(f'{output}', icon="✅")
+        st.warning('This is a warning', icon="⚠️")
         image = Image.open('images/Fraud-Alert.jpeg')
     else:
+        st.success(f'{output}', icon="✅")
         image = Image.open('images/Pass.png')
-        st.warning('This is a warning', icon="⚠️")
         
 
     # st.markdown(f'#### *{output}*')
