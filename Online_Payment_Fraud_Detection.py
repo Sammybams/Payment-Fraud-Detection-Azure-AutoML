@@ -124,7 +124,7 @@ def batch_predict(file):
           "data": [
             {
               "step": int(step),
-              "type": type_map[type],
+              "type": type,
               "amount": amount,
               "oldbalanceOrg": oldbalanceOrg,
               "newbalanceOrig": newbalanceOrig,
