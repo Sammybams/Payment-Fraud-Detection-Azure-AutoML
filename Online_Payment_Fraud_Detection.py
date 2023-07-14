@@ -112,13 +112,12 @@ def batch_predict(file):
     
     features = ["step", "type", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
     predictions = []
-    for i in range(file[features].shape[0]):
-      features
-      features = ["step", "type", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
+    file = file[features]
+    for i in range(file.shape[0]):
       file['percentInOut'] = file['amount']/file['oldbalanceOrg']
       file.loc[file['percentInOut']==float('inf'), 'percentInOut'] = float(0)
 
-      step, type, amount, oldbalanceOrg, newbalanceOrig, oldbalanceDest, newbalanceDest, percentInOut = file[features].iloc[i].to_list()
+      step, type, amount, oldbalanceOrg, newbalanceOrig, oldbalanceDest, newbalanceDest, percentInOut = file.iloc[i].to_list()
       data =  {
         "Inputs": {
           "data": [
