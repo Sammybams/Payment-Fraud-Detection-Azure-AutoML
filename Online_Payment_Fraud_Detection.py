@@ -123,7 +123,7 @@ def batch_predict(file):
         "Inputs": {
           "data": [
             {
-              "step": step,
+              "step": int(step),
               "type": type_map[type],
               "amount": amount,
               "oldbalanceOrg": oldbalanceOrg,
@@ -139,6 +139,7 @@ def batch_predict(file):
         }
       }
 
+      print(data)
       predictions.append(predict(data))
     
     file["isFlaggedFraud"] = predictions
@@ -178,14 +179,14 @@ if uploaded_file is not None:
         
     else:
         if st.button("Run Batch"):
-          try:
-            fraud_batch = pd.read_csv(uploaded_file)
-            output = batch_predict(fraud_batch)
-            st.download_button(
-                label="Download predictions data as CSV",
-                data=output,
-                file_name='fraud_predictions.csv',
-                mime='text/csv',
-            )   
-          except:
-            st.warning('CSV file contains wrong data', icon="⚠️")         
+          # try:
+          fraud_batch = pd.read_csv(uploaded_file)
+          output = batch_predict(fraud_batch)
+          st.download_button(
+              label="Download predictions data as CSV",
+              data=output,
+              file_name='fraud_predictions.csv',
+              mime='text/csv',
+          )   
+          # except:
+          #   st.warning('CSV file contains wrong data', icon="⚠️")         
