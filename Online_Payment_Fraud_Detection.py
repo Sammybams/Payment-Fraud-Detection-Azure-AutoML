@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 st.set_page_config(page_title="Online Payment Fraud Detection App", page_icon="💳")
 
 from PIL import Image
@@ -178,7 +179,8 @@ if uploaded_file is not None:
     else:
         if st.button("Run Batch"):
           try:
-            output = batch_predict(uploaded_file)
+            fraud_batch = pd.read_csv(uploaded_file)
+            output = batch_predict(fraud_batch)
             st.download_button(
                 label="Download predictions data as CSV",
                 data=output,
