@@ -78,8 +78,6 @@ data =  {
 def predict(data):
     body = str.encode(json.dumps(data))
 
-    body = str.encode(json.dumps(data))
-
     url = os.environ.get('ENDPOINT')
     # Replace this with the primary/secondary key or AMLToken for the endpoint
     api_key = os.environ.get('KEY')
@@ -169,7 +167,8 @@ if st.button("Run"):
     except:
         st.warning(f'{prediction}', icon="⚠️")
       
-st.divider()
+# st.divider()
+st.markdown('<br>')
 
 st.subheader("Batch Prediction")
 uploaded_file = st.file_uploader("Choose a CSV file")
