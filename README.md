@@ -40,6 +40,12 @@ Then install the necessary dependencies needed.
 pip install -r requirements.txt
 ```
 
+
+Add virtual environment to Jupiter Kernel
+```
+python -m ipykernel install --user --name=paymentFraudDetection
+```
+
 Train and Deploy your model using Azure AutoML<br>
 (Get the URL and Key to your endpoint)
 ```
