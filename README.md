@@ -8,7 +8,13 @@ Welcome to my project! This machine learning app leverages Azure Automated Machi
 
 From your terminal:
 
-Create a virtual environment named `paymentFraudDetection`
+Clone the repository and name as `paymentFraudDetection`
+
+```
+git clone https://github.com/Sammybams/Payment-Fraud-Detection-Azure-AutoML.git paymentFraudDetection
+```
+
+Create a virtual environment with the same name (`paymentFraudDetection`)
 
 ```
 # Windows
@@ -27,16 +33,10 @@ paymentFraudDetection\Scripts\activate
 source paymentFraudDetection/bin/activate
 ```
 
-Clone the repository
-
-```
-cd paymentFraudDetection
-git clone https://github.com/Sammybams/Payment-Fraud-Detection-Azure-AutoML.git
-```
-
-Then install the necessary dependencies needed.
+Then install the necessary dependencies.
 
 ``` 
+cd paymentFraudDetection
 pip install -r requirements.txt
 ```
 
