@@ -41,7 +41,7 @@ pip install -r requirements.txt
 ```
 
 
-Add the virtual environment to Jupiter Kernel
+Add the virtual environment to Jupyter Kernel
 ```
 python -m ipykernel install --user --name=paymentFraudDetection
 ```
