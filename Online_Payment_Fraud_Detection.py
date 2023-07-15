@@ -188,4 +188,4 @@ if uploaded_file is not None:
                 mime='text/csv',
             )   
           except:
-            st.warning('CSV file contains wrong data', icon="⚠️")         
+            st.warning('CSV file contains wrong data', icon="⚠️")       
