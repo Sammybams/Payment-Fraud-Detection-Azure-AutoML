@@ -61,4 +61,3 @@ streamlit run Online_Payment_Fraud_Detection.py
 ## Demo
 
 [Demo](https://github.com/Sammybams/Payment-Fraud-Detection-Azure-AutoML/assets/64220829/4e33f762-38d5-4a84-9bfb-5bd2bab24fb0)
-
