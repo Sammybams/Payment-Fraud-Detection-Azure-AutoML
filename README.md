@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to my project! This machine learning app leverages Azure Automated Machine Learning to detect payment fraud in online transactions. The web application has been developed using the Streamlit framework and the model was trained on this [dataset](https://www.kaggle.com/datasets/jainilcoder/online-payment-fraud-detection).
+Welcome to my project! This machine learning app leverages Azure Automated Machine Learning to detect payment fraud in online transactions. The web application has been developed using the Streamlit framework and the model was trained on this [dataset](https://www.kaggle.com/datasets/gopalmahadevan/fraud-detection-example).
 
 ## How to Install Dependencies and Run Project Locally
 
