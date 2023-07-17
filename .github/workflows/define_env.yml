@@ -21,4 +21,4 @@ jobs:
         env:        
           KEY: ${{ secrets.KEY }}
           ENDPOINT: ${{ secrets.ENDPOINT }}
-        run: python email-from-python.py
+        run: python streamlit run Online_Payment_Fraud_Detection.py
