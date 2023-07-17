@@ -31,6 +31,11 @@ jobs:
         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: execute py script # email-from-python.py
+        env:        
+          KEY: ${{ secrets.KEY }}
+          ENDPOINT: ${{ secrets.ENDPOINT }}
+        run: python -m streamlit run Online_Payment_Fraud_Detection.py
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
@@ -61,5 +66,3 @@ jobs:
           app-name: 'fraud-detect'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_68BC1F2990F74CCA82494CAA39FC241C }}
-          KEY: ${{ secrets.KEY }}
-          ENDPOINT: ${{ secrets.ENDPOINT }}
