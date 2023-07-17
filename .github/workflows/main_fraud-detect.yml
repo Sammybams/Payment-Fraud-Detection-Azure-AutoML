@@ -35,7 +35,7 @@ jobs:
         env:        
           KEY: ${{ secrets.KEY }}
           ENDPOINT: ${{ secrets.ENDPOINT }}
-        run: python print("Success")
+        run: python empty.py
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
