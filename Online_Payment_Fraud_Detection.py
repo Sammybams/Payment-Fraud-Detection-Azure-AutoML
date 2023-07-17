@@ -191,4 +191,4 @@ if uploaded_file is not None:
             st.warning('CSV file contains wrong data', icon="⚠️")       
 
 st.divider()
-st.markdown("Built by [Samuel Bamgbola](https://www.linkedin.com/in/bamgbola-samuel-29baa91a3/)", unsafe_allow_html=True)
+st.markdown("Built by [Samuel Bamgbola](https://www.linkedin.com/in/samuel-bamgbola-29baa91a3/)", unsafe_allow_html=True)
