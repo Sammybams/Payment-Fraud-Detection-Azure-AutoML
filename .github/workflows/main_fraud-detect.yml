@@ -65,12 +65,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
-      - uses: actions/checkout@v2
 
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
           python-version: '3.7'
+      
+      - name: Start virtual environment
+        run: |
+            source venv/bin/activate
 
       - name: execute py script
         env:        
