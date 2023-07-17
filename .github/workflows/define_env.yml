@@ -17,9 +17,9 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: '3.7'
-          
+
       - name: execute py script # email-from-python.py
         env:        
           KEY: ${{ secrets.KEY }}
           ENDPOINT: ${{ secrets.ENDPOINT }}
-        run: python streamlit run Online_Payment_Fraud_Detection.py
+        run: python -m streamlit run Online_Payment_Fraud_Detection.py
