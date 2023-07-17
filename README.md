@@ -48,6 +48,7 @@ python -m ipykernel install --user --name=paymentFraudDetection
 
 Train and Deploy your model using Azure Automated ML<br>
 (Get the URL and Key to your endpoint)
+
 %[https://youtu.be/ymvDq0t68PQ?t=3165]
 
 Run the Streamlit app locally
