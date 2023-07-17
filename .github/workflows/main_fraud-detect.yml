@@ -4,6 +4,10 @@
 
 name: Build and deploy Python app to Azure Web App - fraud-detect
 
+env:
+  KEY: ${{ secrets.KEY }}
+  ENDPOINT: ${{ secrets.ENDPOINT }}
+  
 on:
   push:
     branches:
