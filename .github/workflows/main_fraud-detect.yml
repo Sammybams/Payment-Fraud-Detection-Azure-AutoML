@@ -56,6 +56,9 @@ jobs:
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
+        env:        
+          KEY: ${{ secrets.KEY }}
+          ENDPOINT: ${{ secrets.ENDPOINT }}
         id: deploy-to-webapp
         with:
           app-name: 'fraud-detect'
