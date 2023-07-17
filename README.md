@@ -46,11 +46,9 @@ Add the virtual environment to Jupyter Kernel
 python -m ipykernel install --user --name=paymentFraudDetection
 ```
 
-Train and Deploy your model using Azure AutoML<br>
+Train and Deploy your model using Azure Automated ML<br>
 (Get the URL and Key to your endpoint)
-```
-coming soon.....
-```
+![How to Build and Deploy your model using Azure AutoML](https://youtu.be/ymvDq0t68PQ?t=3165)
 
 Run the Streamlit app locally
 
