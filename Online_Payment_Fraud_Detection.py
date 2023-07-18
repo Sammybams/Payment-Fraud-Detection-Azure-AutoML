@@ -79,9 +79,9 @@ data =  {
 def predict(data):
     body = str.encode(json.dumps(data))
 
-    url = os.environ.get('ENDPOINT')
+    url = os.environ.get('secret.ENDPOINT')
     # Replace this with the primary/secondary key or AMLToken for the endpoint
-    api_key = os.environ.get('KEY')
+    api_key = os.environ.get('secret.KEY')
     if not api_key:
         raise Exception("A key should be provided to invoke the endpoint")
 

@@ -60,23 +60,3 @@ jobs:
           app-name: 'fraud-detect'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_68BC1F2990F74CCA82494CAA39FC241C }}
-
-  run:
-    runs-on: ubuntu-latest
-    needs: deploy
-    steps:
-
-      - name: Set up Python version
-        uses: actions/setup-python@v1
-        with:
-          python-version: '3.7'
-      
-      - name: Start virtual environment
-        run: |
-            source venv/bin/activate
-
-      - name: execute py script
-        env:        
-          KEY: ${{ secrets.KEY }}
-          ENDPOINT: ${{ secrets.ENDPOINT }}
-        run: python -m streamlit run Online_Payment_Fraud_Detection.py
